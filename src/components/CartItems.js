@@ -1,18 +1,23 @@
 import React from 'react';
-const CartItems = () => {
-    const CartItemComponent = {}
+import CartItem from './CartItem'
+
+const CartItems = (props) => {
     return (
         <div className="container">
             <h1>Cart Items</h1>
-            <div class="collection-item">
-                <div class="row">
-                    <div class="col-md-8">Mediocre Iron Watch</div>
-                    <div class="col-md-2">$3.99</div>
-                    <div class="col-md-2">1</div>
+            <div className="list-group">
+                <div className="list-group-item">
+                    <div className="row">
+                        <div className="col-md-8">Product</div>
+                        <div className="col-md-2">Price</div>
+                        <div className="col-md-2">Quantity</div>
+                    </div>
                 </div>
+                <CartItem cartItemsList={props.cartItemsList} />
             </div>
         </div>
 
     )
 }
+
 export default CartItems
